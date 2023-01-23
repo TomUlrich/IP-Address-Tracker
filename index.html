@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- Leaflet.js  START-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <!-- Leaflet.js  END -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
+
 <body>
+  <!-- #user-interface & #map -->
+  <div id="container">
+    <div id="pattern-bg"></div>
+    <div id="user-interface">
+      <h1>IP Address Tracker</h1>
 
-  IP Address Tracker
+      <div id="search-container">
+        <input type="search" id="search-input" name="q" placeholder="Search for any IP address or domain" pattern="[0-9]{0,2}.[0-9]{0,4}">
+        <button id="search-button">></button>
+      </div>
 
-  Search for any IP address or domain
+      <div id="data-container">
+        <div id="ip-address" class="label">IP Address</div>
+        <div class="data">192.168.0.1</div>
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
+        <div id="location" class="label">Location</div>
+        <div class="data">Brooklyn, NY 10001</div>
+
+        <div id="timezone" class="label">Timezone</div>
+        <div class="data">UTC-5:00</div>
+
+        <div id="isp" class="label">ISP</div>
+        <div class="data">SpaceX Starlink</div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+  </div>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  </div>
 </body>
+
 </html>
