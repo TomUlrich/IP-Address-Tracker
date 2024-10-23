@@ -3,8 +3,6 @@
 :root {
   --gray: hsl(0, 0%, 59%);
   --dark-gray: hsl(0, 0%, 17%);
-  /* --map-height: 60vh; */
-
 }
 
 * {
@@ -18,10 +16,6 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-.background-image{
-  
-}
-
 #map {
   height: 60vh;
   width: 100%;
@@ -32,8 +26,8 @@ body {
   position: absolute;
   z-index: 99;
   top: 0;
-  left:0rem;
-  right:0;
+  left: 0rem;
+  right: 0;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -47,13 +41,11 @@ h1 {
   font-weight: 500;
 }
 
-
-
 .search-bar input {
   padding: 14px;
   border-radius: 10px 0 0 10px;
   border: none;
-  /* font-size: 18px; */
+  outline: none;
 }
 
 .search-bar button {
@@ -65,7 +57,6 @@ h1 {
   color: #fff;
   background-color: var(--dark-gray);
   font-weight: 700;
-  /* font-size: 18px; */
 }
 
 .output-container {
@@ -99,8 +90,6 @@ h1 {
   top: 0;
   left: 0;
 }
-
-
 
 .attribution {
   font-size: 11px;
