@@ -14,39 +14,34 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Encapsulate currentMarker in the createMapMarkerUpdater function
 function createMapMarkerUpdater(map) {
-  let currentMarker = null; // Private variable inside the closure
+  let currentMarker = null;
 
-  // Return a function (getIPData) that has access to currentMarker
   return async function updateMapWithIPData(ip) {
     try {
       const response = await fetch(`/api/ipinfo?ip=${ip}`);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch IP data: ${response.statusText}`);
-      }
+      if (!response.ok) throw new Error(`Failed to fetch IP data: ${response.statusText}`);
       const data = await response.json();
 
-      // Update UI with fetched IP data
       document.querySelector('.ip-address').textContent = data.ip;
-      document.querySelector('.location').textContent = `${data.location.city}, ${data.location.region} (${data.location.country})`;
-      document.querySelector('.timezone').textContent = `UTC ${data.location.timezone}`;
-      document.querySelector('.isp').textContent = data.isp;
+      document.querySelector('.location').textContent = `${data.city}, ${data.region} (${data.country})`;
+      document.querySelector('.timezone').textContent = `UTC ${data.timezone}`;
+      document.querySelector('.isp').textContent = data.org;
 
-      // Update map with lat & lng
-      map.setView([data.location.lat, data.location.lng], 13);
+      const [lat, lng] = data.loc.split(',');
+      map.setView([lat, lng], 13);
 
-      // Clear the previous marker if it exists
       if (currentMarker) {
-        currentMarker.remove(); // Safely remove the old marker
+        currentMarker.remove();
+        currentMarker = null;
       }
-
-      // Add a new marker for the IP address location
-      currentMarker = L.marker([data.location.lat, data.location.lng]).addTo(map);
+      currentMarker = L.marker([lat, lng]).addTo(map);
     } catch (error) {
       console.error('Error fetching IP data:', error);
       alert('Failed to fetch IP data. Please try again later.');
     }
   };
 }
+
 
 // Create the updateMapWithIPData function with encapsulated currentMarker
 const updateMapWithIPData = createMapMarkerUpdater(map);
@@ -63,7 +58,8 @@ searchButton.addEventListener('click', (e) => {
 
 // Automatically fetch and display the user's IP on page load
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('https://api.ipify.org?format=json')
+  // fetch('https://api.ipify.org?format=json')
+  fetch('https://ipinfo.io/json')
     .then((response) => response.json())
     .then((data) => {
       const userIP = data.ip; // Get the user's IP address

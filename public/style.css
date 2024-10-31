@@ -16,29 +16,52 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-background {
+  background-image: url('./images/pattern-bg-desktop.png');
+  height: 380px;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+
 #map {
-  height: 60vh;
-  width: 100%;
+  margin-top: -10px;
+  height: 100%;
   z-index: 1;
 }
 
-.container {
+/* container for Search Bar & Data Display */
+.ui-container {
   position: absolute;
   z-index: 99;
   top: 0;
-  left: 0rem;
-  right: 0;
-  height: 400px;
+  left: 50%;
+  transform: translate(-50%, 0%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
+  min-width: 330px;
 }
 
 h1 {
   color: #fff;
   margin: 2rem 0;
   font-weight: 500;
+}
+
+.search-bar {
+  display: flex;
+  height: 20px;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 
 .search-bar input {
@@ -48,19 +71,21 @@ h1 {
   outline: none;
 }
 
-.search-bar button {
+.search-button {
   padding: 14px 20px;
-  margin-bottom: 1rem;
   border-radius: 0 10px 10px 0;
   border: none;
   margin-left: -10px;
   color: #fff;
   background-color: var(--dark-gray);
   font-weight: 700;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.output-container {
-  padding: 2rem 0;
+.data-display {
+  padding: 1.6rem;
   width: 90%;
   border-radius: 10px;
   border: none;
@@ -70,7 +95,9 @@ h1 {
 
 .output-field {
   text-align: center;
-  margin-bottom: 1rem;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 .label {
@@ -84,17 +111,41 @@ h1 {
   font-size: 1rem;
 }
 
-.background {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-}
-
 .attribution {
-  font-size: 11px;
+  color: #fff;
+  font-size: 0.9rem;
   text-align: center;
+  padding: 1rem 0;
+  background-image: url('./images/pattern-bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: cover;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(227, 100%, 90%);
+}
+
+/* #HL1: mobile-first Breakpoints */
+@media only screen and (min-width: 1440px) {
+  .header-background {
+    height: 300px;
+  }
+  .data-display {
+    display: flex;
+  }
+  .output-field {
+    width: 20vw;
+    padding: 0 1.2rem;
+    &:not(:last-child) {
+      margin-bottom: 0;
+      border-right: 2px solid var(--gray);
+    }
+  }
+  .label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .data {
+    font-size: 1.2rem;
+  }
 }

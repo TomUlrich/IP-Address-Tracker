@@ -21,47 +21,54 @@
 </head>
 
 <body>
-  <img class="background-image" src="./images/pattern-bg-desktop.png" alt="">
-
-  <div id="map"></div>
-
   <div class="container">
-    <h1>IP Address Tracker</h1>
+    <div class="header-background"></div>
 
-    <!-- Search Bar -->
-    <div class="search-bar">
-      <input type="search" id="search-input" name="search-input" size="31" placeholder="Search for any IP address or domain">
-      <button class="search-button">></button>
+    <div id="map"></div>
+
+    <div class="ui-container">
+      <h1>IP Address Tracker</h1>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <!-- Search Input -->
+        <input type="search" id="search-input" name="search-input" aria-label="Search for any IP address or domain" size="31" placeholder="Search for any IP address or domain">
+        <!-- Search Button -->
+        <button class="search-button" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+            <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Data Display -->
+      <div class="data-display">
+        <!-- IP Address -->
+        <div class="output-field ip-address-container">
+          <div class="label">IP Address</div>
+          <div class="data ip-address"></div>
+        </div>
+        <!-- Location -->
+        <div class="output-field location-container">
+          <div class="label">Location</div>
+          <div class="data location"></div>
+        </div>
+        <!-- Timezone -->
+        <div class="output-field timezone-container">
+          <div class="label">Timezone</div>
+          <div class="data timezone"></div>
+        </div>
+        <!-- ISP -->
+        <div class="output-field isp-container">
+          <div class="label">ISP</div>
+          <div class="data isp"></div>
+        </div>
+      </div>
     </div>
-
-    <!-- Output -->
-    <div class="output-container">
-      <!-- IP Address -->
-      <div class="output-field ip-address-container">
-        <div class="label">IP Address</div>
-        <div class="data ip-address"></div>
-      </div>
-      <!-- Location -->
-      <div class="output-field location-container">
-        <div class="label">Location</div>
-        <div class="data location"></div>
-      </div>
-      <!-- Timezone -->
-      <div class="output-field timezone-container">
-        <div class="label">Timezone</div>
-        <div class="data timezone"></div>
-      </div>
-      <!-- ISP -->
-      <div class="output-field isp-container">
-        <div class="label">ISP</div>
-        <div class="data isp"></div>
-      </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/TomUlrich" target="_blank">Tom</a>.
     </div>
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/TomUlrich" target="_blank">Tom Ulrich</a>.
   </div>
 </body>
 

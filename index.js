@@ -4,7 +4,7 @@
 const express = require('express');
 require('dotenv').config();
 
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.token;
 
 // create express app
 const app = express();
@@ -14,17 +14,19 @@ app.use(express.static('public'));
 
 // Create a route for IP data fetching
 app.get('/api/ipinfo', async (req, res) => {
-  const ip = req.query.ip; // Get the IP address from the client request
-  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`;
-
+  const ip = req.query.ip;
+  const url = `https://ipinfo.io/${ip}?token=${apiKey}`;
+  
   try {
     const response = await fetch(url);
     const data = await response.json();
-    res.json(data); // Send the API response back to the client
+    res.json(data);
   } catch (error) {
+    console.error('Error fetching IP data:', error.message, error.stack);
     res.status(500).json({ error: 'Failed to fetch IP data' });
   }
 });
+
 
 // Listen on port 3000
 app.listen(3000, () => console.log('listening at 3000'));
