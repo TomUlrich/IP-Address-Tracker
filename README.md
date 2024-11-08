@@ -110,7 +110,7 @@ Incorporate additional information such as approximate population of the locatio
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/TomUlrich/IP-address-tracker-v2
+   git clone https://github.com/TomUlrich/IP-Address-Tracker
    ```
 
 2. Navigate into the project directory:
