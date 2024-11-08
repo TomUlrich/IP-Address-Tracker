@@ -1,15 +1,12 @@
 # IP Address Tracker
 
-The IP Address Tracker is a web application that allows users to enter an IP address, fetches related geolocation data (such as country, region, city, and ISP), and displays this data along with the location on an interactive map. The app also fetches the user's IP location automatically on initial load. Built with JavaScript and Node.js, this project demonstrates fetching and displaying location data in real-time with an easy-to-use interface.
-
-Thank you to Frontend Mentor for the [challenge and resources](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
-
-<!-- #todo: Live Demo -->
-
-- [Live Demo](https://your-live-demo-link.com)
+> The IP Address Tracker is a web application that allows users to enter an IP address, fetches related geolocation data (such as country, region, city, and ISP), and displays this data along with the location on an interactive map.  
+> The app also fetches the user's IP location automatically on initial load.  
+> Built with JavaScript and Node.js, this project demonstrates fetching and displaying location data in real-time with an easy-to-use interface.
 
 ## Table of Contents
 
+- [Project Links](#project-links)
 - [Screenshots](#screenshots)
 - [Folder Structure](#folder-structure)
 - [My Process](#my-process)
@@ -20,7 +17,11 @@ Thank you to Frontend Mentor for the [challenge and resources](https://www.front
 - [Installation](#installation)
 - [Author](#author)
 
----
+## Project Links
+
+- IP Address Tracker [Live Demo](https://ip-address-tracker-jct3.onrender.com/)
+
+- Thank you to Frontend Mentor for the [challenge and resources](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
 
 ## Screenshots
 
@@ -65,7 +66,6 @@ IP-Address-Tracker/
 
 ## Useful Resources
 
-- [Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0) - Challenge inspiration and design reference
 - [Leaflet Documentation](https://leafletjs.com/reference.html) - Useful for implementing map and markers
 - [MDN Web Docs on async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await) - Helped in understanding asynchronous functions and error handling
 - [dotenv GitHub Repository](https://github.com/motdotla/dotenv) - Useful for learning environment variable configuration
@@ -104,9 +104,6 @@ Incorporate additional information such as approximate population of the locatio
 
 ## Installation
 
-<!-- #todo: github repo -->
-<!-- #todo: test the installation -->
-
 1. Clone the repository:
 
    ```bash
@@ -144,6 +141,6 @@ Incorporate additional information such as approximate population of the locatio
 
 ## Author
 
-<!-- #todo:- Website - [Add your name here](https://www.your-site.com) -->
+- My Website - [TomUlrich.github.io](https://tomulrich.github.io/)
 
 - GitHub - [@TomUlrich](https://github.com/TomUlrich)
