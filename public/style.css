@@ -125,7 +125,7 @@ h1 {
   color: hsl(227, 100%, 90%);
 }
 
-/* #HL1: mobile-first Breakpoints */
+/* ## mobile-first Breakpoints */
 @media only screen and (min-width: 1440px) {
   .header-background {
     height: 300px;
