@@ -2,32 +2,34 @@
 
 > The IP Address Tracker is a web application that allows users to enter an IP address, fetches related geolocation data (such as country, region, city, and ISP), and displays this data along with the location on an interactive map.  
 > The app also fetches the user's IP location automatically on initial load.  
-> Built with JavaScript and Node.js, this project demonstrates fetching and displaying location data in real-time with an easy-to-use interface.
+> Built with JavaScript and Node.js, this project demonstrates fetching and displaying location data in real-time with an easy-to-use interface.  
+
+## Project Links
+
+IP Address Tracker [Live Demo](https://ip-address-tracker-jct3.onrender.com/). ⚡ 
+
+Thank you to **Frontend Mentor** for the [challenge and resources](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). ❤️
+
+
+<!-- ## Screenshots -->
+
+|                                     |                                      |
+| ----------------------------------------- | ------------------------------------------- |
+| ![mobile](./assets/screenshot-mobile.PNG) | ![desktop](./assets/screenshot-desktop.PNG) |
 
 ## Table of Contents
 
-- [Project Links](#project-links)
-- [Screenshots](#screenshots)
+<!-- - [Description](#description) -->
+<!-- - [Project Links](#project-links) -->
+<!-- - [Screenshots](#screenshots) -->
 - [Folder Structure](#folder-structure)
 - [My Process](#my-process)
 - [Built With](#built-with)
 - [What I Learned](#what-i-learned)
 - [Useful Resources](#useful-resources)
-- [Continued Development](#continued-development)
 - [Installation](#installation)
+- [Continued Development](#continued-development)
 - [Author](#author)
-
-## Project Links
-
-- IP Address Tracker [Live Demo](https://ip-address-tracker-jct3.onrender.com/)
-
-- Thank you to Frontend Mentor for the [challenge and resources](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
-
-## Screenshots
-
-| mobile                                    | desktop                                     |
-| ----------------------------------------- | ------------------------------------------- |
-| ![mobile](./assets/screenshot-mobile.PNG) | ![desktop](./assets/screenshot-desktop.PNG) |
 
 ## Folder Structure
 
@@ -54,9 +56,10 @@ IP-Address-Tracker/
 ## Built With
 
 - **Frontend**: HTML, CSS, JavaScript, [Leaflet.js](https://leafletjs.com/) for interactive maps
-- **Backend**: Node.js, Express
+- **Backend**: Node.js, Express.js, [dotenv](https://github.com/motdotla/dotenv) for handling environment variables
 - **API**: [ipinfo.io](https://ipinfo.io) for IP geolocation data
-- **Tools**: [nodemon](https://www.npmjs.com/package/nodemon), `.env` for API token security
+- **Development**: [nodemon](https://github.com/remy/nodemon/) for automatic server restart  
+- **Deployment**: [Render](https://render.com/) for deploying and hosting the application
 
 ## What I Learned
 
@@ -69,6 +72,52 @@ IP-Address-Tracker/
 - [Leaflet Documentation](https://leafletjs.com/reference.html) - Useful for implementing map and markers
 - [MDN Web Docs on async/await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await) - Helped in understanding asynchronous functions and error handling
 - [dotenv GitHub Repository](https://github.com/motdotla/dotenv) - Useful for learning environment variable configuration
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/TomUlrich/IP-Address-Tracker
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd IP-Address-Tracker
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Set up the environment variables:
+
+   - Create a `.env` file in the root directory.
+   - Add your `ipinfo.io` API token:
+
+   ```
+   IPINFO_API_TOKEN=your_api_token_here
+   ```
+
+5. Hide your .env file from GitHub:
+
+   - Create a ``.gitignore`` file in the root directory.
+   - Add ``.env`` on its own line:
+
+   ```
+   .env
+   ```
+
+6. Run the application:
+
+   ```bash
+   npm start
+   ```
+
+7. Open your browser and go to `http://localhost:3000`.
 
 ## Continued development
 
@@ -101,43 +150,6 @@ app.use('/api', apiRoutes);
 ### 2. Additional Data Points
 
 Incorporate additional information such as approximate population of the location, ISP rating, or threat level.
-
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/TomUlrich/IP-Address-Tracker
-   ```
-
-2. Navigate into the project directory:
-
-   ```bash
-   cd IP-Address-Tracker
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Set up the environment variables:
-
-   - Create a `.env` file in the root directory.
-   - Add your `ipinfo.io` API token:
-
-   ```
-   IPINFO_API_TOKEN=your_api_token_here
-   ```
-
-5. Run the application:
-
-   ```bash
-   npm start
-   ```
-
-6. Open your browser and go to `http://localhost:3000`.
 
 ## Author
 
